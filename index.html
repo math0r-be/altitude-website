@@ -22,6 +22,7 @@
             --doré: #c9a96e;
             --texte: #3d3832;
             --texte-clair: #6b6358;
+            --rouge: #c94a3a;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -52,7 +53,6 @@
             background: #000;
         }
 
-        /* Vidéo background */
         .hero-video {
             position: absolute;
             inset: 0;
@@ -62,7 +62,6 @@
             filter: grayscale(100%) brightness(0.7);
         }
 
-        /* Overlay gradient pour lisibilité */
         .hero-overlay {
             position: absolute;
             inset: 0;
@@ -72,12 +71,9 @@
                 linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.4) 50%, rgba(26, 24, 22, 0.95) 100%);
         }
 
-        /* Bottom gradient pour transition */
         .hero-bottom-gradient {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
+            bottom: 0; left: 0; right: 0;
             height: 200px;
             background: linear-gradient(to bottom, transparent 0%, var(--blanc) 100%);
             pointer-events: none;
@@ -87,9 +83,7 @@
         /* ==================== NAVBAR PILL ==================== */
         .nav {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             z-index: 20;
             padding: 1.5rem 2rem;
             display: flex;
@@ -117,10 +111,7 @@
             text-decoration: none;
         }
 
-        .nav-logo svg {
-            width: 24px;
-            height: 24px;
-        }
+        .nav-logo svg { width: 24px; height: 24px; }
 
         .nav-logo span {
             font-family: 'Playfair Display', serif;
@@ -160,10 +151,7 @@
             margin-left: 0.5rem;
         }
 
-        .nav-cta:hover {
-            background: var(--terracotta-clair) !important;
-            transform: scale(1.02);
-        }
+        .nav-cta:hover { background: var(--terracotta-clair) !important; transform: scale(1.02); }
 
         /* ==================== HERO CONTENT ==================== */
         .hero-content {
@@ -177,7 +165,6 @@
             padding: 0 3rem;
         }
 
-        /* Typographie staggered */
         .hero-title {
             font-family: 'Playfair Display', serif;
             font-weight: 400;
@@ -187,31 +174,9 @@
             text-transform: lowercase;
         }
 
-        .hero-line-1 {
-            font-size: clamp(4rem, 12vw, 10rem);
-            display: block;
-            margin-left: 0;
-            opacity: 0;
-            animation: slide-up 1s ease 0.2s forwards;
-        }
-
-        .hero-line-2 {
-            font-size: clamp(3.5rem, 10vw, 8.5rem);
-            font-style: italic;
-            color: var(--terracotta-clair);
-            display: block;
-            margin-left: 15%;
-            opacity: 0;
-            animation: slide-up 1s ease 0.5s forwards;
-        }
-
-        .hero-line-3 {
-            font-size: clamp(2.5rem, 7vw, 6rem);
-            display: block;
-            margin-left: 35%;
-            opacity: 0;
-            animation: slide-up 1s ease 0.8s forwards;
-        }
+        .hero-line-1 { font-size: clamp(4rem, 12vw, 10rem); display: block; opacity: 0; animation: slide-up 1s ease 0.2s forwards; }
+        .hero-line-2 { font-size: clamp(3.5rem, 10vw, 8.5rem); font-style: italic; color: var(--terracotta-clair); display: block; margin-left: 15%; opacity: 0; animation: slide-up 1s ease 0.5s forwards; }
+        .hero-line-3 { font-size: clamp(2.5rem, 7vw, 6rem); display: block; margin-left: 35%; opacity: 0; animation: slide-up 1s ease 0.8s forwards; }
 
         @keyframes slide-up {
             from { opacity: 0; transform: translateY(40px); }
@@ -219,509 +184,152 @@
         }
 
         /* Stats corners */
-        .hero-stats {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 10;
-        }
-
-        .stat-top-left {
-            position: absolute;
-            top: 12%;
-            left: 3rem;
-            opacity: 0;
-            animation: fade-in 1s ease 1.2s forwards;
-        }
-
-        .stat-top-right {
-            position: absolute;
-            top: 15%;
-            right: 3rem;
-            text-align: right;
-            opacity: 0;
-            animation: fade-in 1s ease 1.4s forwards;
-        }
-
-        .stat-bottom-left {
-            position: absolute;
-            bottom: 25%;
-            left: 3rem;
-            opacity: 0;
-            animation: fade-in 1s ease 1.6s forwards;
-        }
-
-        .stat-bottom-right {
-            position: absolute;
-            bottom: 20%;
-            right: 3rem;
-            text-align: right;
-            opacity: 0;
-            animation: fade-in 1s ease 1.8s forwards;
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            font-weight: 400;
-            color: var(--blanc);
-            letter-spacing: -0.02em;
-        }
-
-        .stat-label {
-            font-size: 0.75rem;
-            color: var(--rose-sauge);
-            font-weight: 300;
-            letter-spacing: 0.05em;
-            margin-top: 0.25rem;
-        }
-
-        .stat-divider {
-            width: 40px;
-            height: 1px;
-            background: rgba(212, 184, 168, 0.4);
-            margin: 0.5rem 0;
-        }
-
-        .stat-top-right .stat-divider,
-        .stat-bottom-right .stat-divider {
-            margin-left: auto;
-        }
-
-        @keyframes fade-in {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        .hero-stats { position: absolute; inset: 0; pointer-events: none; z-index: 10; }
+        .stat-top-left { position: absolute; top: 12%; left: 3rem; opacity: 0; animation: fade-in 1s ease 1.2s forwards; }
+        .stat-top-right { position: absolute; top: 15%; right: 3rem; text-align: right; opacity: 0; animation: fade-in 1s ease 1.4s forwards; }
+        .stat-bottom-left { position: absolute; bottom: 25%; left: 3rem; opacity: 0; animation: fade-in 1s ease 1.6s forwards; }
+        .stat-bottom-right { position: absolute; bottom: 20%; right: 3rem; text-align: right; opacity: 0; animation: fade-in 1s ease 1.8s forwards; }
+        .stat-number { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 400; color: var(--blanc); letter-spacing: -0.02em; }
+        .stat-label { font-size: 0.75rem; color: var(--rose-sauge); font-weight: 300; letter-spacing: 0.05em; margin-top: 0.25rem; }
+        .stat-divider { width: 40px; height: 1px; background: rgba(212, 184, 168, 0.4); margin: 0.5rem 0; }
+        .stat-top-right .stat-divider, .stat-bottom-right .stat-divider { margin-left: auto; }
+        @keyframes fade-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         /* Scroll indicator */
-        .hero-scroll {
-            position: absolute;
-            bottom: 3rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            z-index: 10;
-            opacity: 0;
-            animation: fade-in 1s ease 2s forwards;
-        }
-
-        .hero-scroll span {
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--rose-sauge);
-        }
-
-        .scroll-line {
-            width: 1px;
-            height: 40px;
-            background: linear-gradient(to bottom, var(--terracotta-clair), transparent);
-            animation: scroll-pulse 2s infinite ease-in-out;
-        }
-
-        @keyframes scroll-pulse {
-            0%, 100% { opacity: 0.3; transform: scaleY(0.5); }
-            50% { opacity: 1; transform: scaleY(1); }
-        }
+        .hero-scroll { position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; z-index: 10; opacity: 0; animation: fade-in 1s ease 2s forwards; }
+        .hero-scroll span { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose-sauge); }
+        .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--terracotta-clair), transparent); animation: scroll-pulse 2s infinite ease-in-out; }
+        @keyframes scroll-pulse { 0%, 100% { opacity: 0.3; transform: scaleY(0.5); } 50% { opacity: 1; transform: scaleY(1); } }
 
         /* ==================== SECTIONS ==================== */
         section { padding: 7rem 3rem; }
 
-        .section-eyebrow {
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--terracotta);
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            font-weight: 400;
-            line-height: 1.15;
-            color: var(--noir);
-            margin-bottom: 1.5rem;
-        }
-
-        .section-title em {
-            font-style: italic;
-            color: var(--terracotta);
-        }
+        .section-eyebrow { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 1rem; font-weight: 500; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 400; line-height: 1.15; color: var(--noir); margin-bottom: 1.5rem; }
+        .section-title em { font-style: italic; color: var(--terracotta); }
 
         /* ABOUT */
-        .about { background: var(--blanc); }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .about-text p {
-            color: var(--texte-clair);
-            font-size: 1.05rem;
-            font-weight: 300;
-            line-height: 1.8;
-            margin-bottom: 1.25rem;
-        }
-
-        .about-text p strong {
-            color: var(--noir);
-            font-weight: 500;
-        }
-
-        .about-image {
-            position: relative;
-            border-radius: 2px;
-            overflow: hidden;
-            aspect-ratio: 4/5;
-        }
-
-        .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s ease;
-        }
-
+        .about { background: var(--blanc-2); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .about-text p { color: var(--texte-clair); font-size: 1.05rem; font-weight: 300; line-height: 1.8; margin-bottom: 1.25rem; }
+        .about-text p strong { color: var(--noir); font-weight: 500; }
+        .about-image { position: relative; border-radius: 2px; overflow: hidden; aspect-ratio: 4/5; }
+        .about-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
         .about-image:hover img { transform: scale(1.03); }
-
-        .about-image::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border: 1px solid rgba(193, 122, 92, 0.15);
-            border-radius: 2px;
-            pointer-events: none;
-        }
+        .about-image::after { content: ''; position: absolute; inset: 0; border: 1px solid rgba(193, 122, 92, 0.15); border-radius: 2px; pointer-events: none; }
 
         /* DISCIPLINES */
-        .disciplines { background: var(--blanc-2); }
-
-        .disciplines-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .disciplines-header .section-title {
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .disciplines-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .discipline-card {
-            background: var(--blanc);
-            border-radius: 2px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            cursor: default;
-        }
-
-        .discipline-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-        }
-
-        .discipline-card-image {
-            aspect-ratio: 16/10;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .discipline-card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
+        .disciplines { background: var(--blanc); }
+        .disciplines-header { text-align: center; margin-bottom: 4rem; }
+        .disciplines-header .section-title { max-width: 600px; margin-left: auto; margin-right: auto; }
+        .disciplines-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
+        .discipline-card { background: var(--blanc-2); border-radius: 2px; overflow: hidden; transition: all 0.4s ease; cursor: default; }
+        .discipline-card:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
+        .discipline-card-image { aspect-ratio: 16/10; overflow: hidden; }
+        .discipline-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
         .discipline-card:hover .discipline-card-image img { transform: scale(1.05); }
+        .discipline-card-content { padding: 1.75rem; }
+        .discipline-card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--noir); }
+        .discipline-card p { font-size: 0.9rem; color: var(--texte-clair); font-weight: 300; line-height: 1.6; }
 
-        .discipline-card-content {
-            padding: 1.75rem;
-        }
+        /* TARIFS */
+        .tarifs { background: var(--blanc-2); }
+        .tarifs-header { text-align: center; margin-bottom: 4rem; }
+        .tarifs-header .section-title { max-width: 600px; margin-left: auto; margin-right: auto; }
+        .tarifs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto 3rem; }
+        .tarif-card { background: var(--blanc); border-radius: 2px; overflow: hidden; transition: all 0.4s ease; border: 1px solid rgba(193, 122, 92, 0.1); }
+        .tarif-card:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
+        .tarif-card-header { padding: 1.5rem 2rem; color: var(--blanc); }
+        .tarif-card-header h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 500; letter-spacing: 0.05em; }
+        .tarif-card-header.unite { background: linear-gradient(135deg, #6b7280, #4b5563); }
+        .tarif-card-header.cartes { background: linear-gradient(135deg, var(--terracotta), var(--terracotta-fonce)); }
+        .tarif-card-header.abonnements { background: linear-gradient(135deg, #059669, #047857); }
+        .tarif-card-body { padding: 2rem; }
+        .tarif-price { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 500; color: var(--noir); margin-bottom: 0.25rem; }
+        .tarif-price span { font-size: 1rem; color: var(--texte-clair); font-weight: 300; }
+        .tarif-detail { font-size: 0.9rem; color: var(--texte-clair); font-weight: 300; margin-bottom: 0.25rem; }
+        .tarif-note { font-size: 0.8rem; color: var(--terracotta); font-weight: 500; margin-top: 1rem; }
+        .tarif-juniors { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(193, 122, 92, 0.15); }
+        .tarif-juniors h4 { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.75rem; }
+        .tarif-juniors .tarif-price { font-size: 1.8rem; }
 
-        .discipline-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            color: var(--noir);
-        }
+        /* Conditions */
+        .conditions { background: var(--blanc); }
+        .conditions-content { max-width: 800px; margin: 0 auto; }
+        .conditions-block { margin-bottom: 2.5rem; }
+        .conditions-block h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 500; color: var(--noir); margin-bottom: 1rem; border-bottom: 1px solid rgba(193, 122, 92, 0.2); padding-bottom: 0.5rem; }
+        .conditions-block ul { list-style: none; margin-bottom: 1rem; }
+        .conditions-block li { font-size: 0.95rem; color: var(--texte-clair); font-weight: 300; padding: 0.4rem 0; padding-left: 1.5rem; position: relative; }
+        .conditions-block li::before { content: '—'; position: absolute; left: 0; color: var(--terracotta); }
+        .conditions-block .note { font-size: 0.9rem; color: var(--terracotta); font-weight: 400; margin-top: 0.75rem; }
+        .conditions-warning { font-size: 0.85rem; color: var(--rouge); font-weight: 500; margin-top: 0.5rem; }
+        .conditions-footer { text-align: center; margin-top: 3rem; font-size: 0.85rem; color: var(--texte-clair); font-weight: 300; }
 
-        .discipline-card p {
-            font-size: 0.9rem;
-            color: var(--texte-clair);
-            font-weight: 300;
-            line-height: 1.6;
-        }
+        /* PRESTATIONS */
+        .prestations { background: var(--blanc-2); }
+        .prestations-content { max-width: 800px; margin: 0 auto; text-align: center; }
+        .prestations-content p { color: var(--texte-clair); font-size: 1.05rem; font-weight: 300; line-height: 1.8; margin-bottom: 1.5rem; }
+        .prestations-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: 2rem; }
+        .prestations-list span { padding: 0.5rem 1.25rem; background: var(--blanc); border: 1px solid rgba(193, 122, 92, 0.2); border-radius: 100px; font-size: 0.85rem; font-weight: 400; color: var(--noir); }
+
+        /* EVENEMENTS */
+        .evenements { background: var(--blanc); }
+        .evenements-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+        .evenement-card { background: var(--blanc-2); border-radius: 2px; overflow: hidden; transition: all 0.4s ease; }
+        .evenement-card:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
+        .evenement-image { aspect-ratio: 16/9; overflow: hidden; }
+        .evenement-image img { width: 100%; height: 100%; object-fit: cover; }
+        .evenement-content { padding: 1.75rem; }
+        .evenement-content h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--noir); }
+        .evenement-content .date { font-size: 0.8rem; color: var(--terracotta); font-weight: 500; margin-bottom: 0.75rem; }
+        .evenement-content p { font-size: 0.9rem; color: var(--texte-clair); font-weight: 300; line-height: 1.6; }
 
         /* VIDEO */
-        .video-section {
-            background: var(--blanc);
-            text-align: center;
-        }
-
-        .video-container {
-            max-width: 900px;
-            margin: 3rem auto 0;
-            position: relative;
-            border-radius: 2px;
-            overflow: hidden;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            background: var(--noir);
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+        .video-section { background: var(--blanc-2); text-align: center; }
+        .video-container { max-width: 900px; margin: 3rem auto 0; position: relative; border-radius: 2px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.12); }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; background: var(--noir); }
+        .video-wrapper iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
 
         /* TESTIMONIALS */
-        .testimonials { background: var(--blanc-2); }
-
-        .testimonials-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .testimonial-card {
-            background: var(--blanc);
-            padding: 2.5rem;
-            border-radius: 2px;
-            position: relative;
-        }
-
-        .testimonial-card::before {
-            content: '"';
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            color: var(--terracotta);
-            opacity: 0.25;
-            position: absolute;
-            top: 1rem;
-            left: 1.5rem;
-            line-height: 1;
-        }
-
-        .testimonial-card p {
-            font-size: 1rem;
-            color: var(--texte);
-            font-weight: 300;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .testimonial-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--rose-sauge);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 1rem;
-            color: var(--blanc);
-        }
-
-        .testimonial-name {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--noir);
-        }
-
-        .testimonial-role {
-            font-size: 0.8rem;
-            color: var(--texte-clair);
-            font-weight: 300;
-        }
+        .testimonials { background: var(--blanc); }
+        .testimonials-header { text-align: center; margin-bottom: 4rem; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto; }
+        .testimonial-card { background: var(--blanc-2); padding: 2.5rem; border-radius: 2px; position: relative; }
+        .testimonial-card::before { content: '"'; font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--terracotta); opacity: 0.25; position: absolute; top: 1rem; left: 1.5rem; line-height: 1; }
+        .testimonial-card p { font-size: 1rem; color: var(--texte); font-weight: 300; line-height: 1.7; margin-bottom: 1.5rem; position: relative; }
+        .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+        .testimonial-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--rose-sauge); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--blanc); }
+        .testimonial-name { font-size: 0.9rem; font-weight: 500; color: var(--noir); }
+        .testimonial-role { font-size: 0.8rem; color: var(--texte-clair); font-weight: 300; }
 
         /* CTA */
-        .cta-section {
-            background: var(--noir);
-            text-align: center;
-            color: var(--blanc);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 700px;
-            height: 700px;
-            background: radial-gradient(circle, rgba(193, 122, 92, 0.15) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
+        .cta-section { background: var(--noir); text-align: center; color: var(--blanc); position: relative; overflow: hidden; }
+        .cta-section::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 700px; height: 700px; background: radial-gradient(circle, rgba(193, 122, 92, 0.15) 0%, transparent 70%); pointer-events: none; }
         .cta-section .section-eyebrow { color: var(--terracotta-clair); }
         .cta-section .section-title { color: var(--blanc); }
-
-        .cta-section p {
-            color: var(--rose-sauge);
-            font-size: 1.05rem;
-            font-weight: 300;
-            max-width: 500px;
-            margin: 0 auto 2.5rem;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 1.1rem 2.5rem;
-            background: var(--terracotta);
-            color: var(--blanc);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            border: none;
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
-
-        .btn-primary:hover {
-            background: var(--terracotta-clair);
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(193, 122, 92, 0.4);
-        }
+        .cta-section p { color: var(--rose-sauge); font-size: 1.05rem; font-weight: 300; max-width: 500px; margin: 0 auto 2.5rem; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 0.6rem; padding: 1.1rem 2.5rem; background: var(--terracotta); color: var(--blanc); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; border: none; cursor: pointer; transition: all 0.4s ease; }
+        .btn-primary:hover { background: var(--terracotta-clair); transform: translateY(-2px); box-shadow: 0 15px 40px rgba(193, 122, 92, 0.4); }
 
         /* FOOTER */
-        footer {
-            background: var(--noir-doux);
-            padding: 4rem 3rem 2rem;
-            color: var(--rose-sauge);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto 3rem;
-        }
-
-        .footer-brand .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            font-weight: 500;
-            letter-spacing: 0.15em;
-            color: var(--blanc);
-            margin-bottom: 1rem;
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        .footer-brand p {
-            font-size: 0.9rem;
-            font-weight: 300;
-            line-height: 1.7;
-            max-width: 280px;
-        }
-
-        .footer-col h4 {
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--terracotta-clair);
-            margin-bottom: 1.2rem;
-            font-weight: 500;
-        }
-
+        footer { background: var(--noir-doux); padding: 4rem 3rem 2rem; color: var(--rose-sauge); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; max-width: 1200px; margin: 0 auto 3rem; }
+        .footer-brand .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 500; letter-spacing: 0.15em; color: var(--blanc); margin-bottom: 1rem; display: inline-block; text-decoration: none; }
+        .footer-brand p { font-size: 0.9rem; font-weight: 300; line-height: 1.7; max-width: 280px; }
+        .footer-col h4 { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--terracotta-clair); margin-bottom: 1.2rem; font-weight: 500; }
         .footer-col ul { list-style: none; }
         .footer-col li { margin-bottom: 0.6rem; }
-
-        .footer-col a {
-            color: var(--rose-sauge);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 300;
-            transition: color 0.3s ease;
-        }
-
+        .footer-col a { color: var(--rose-sauge); text-decoration: none; font-size: 0.9rem; font-weight: 300; transition: color 0.3s ease; }
         .footer-col a:hover { color: var(--blanc); }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(184, 160, 144, 0.15);
-            padding-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-bottom p {
-            font-size: 0.8rem;
-            font-weight: 300;
-        }
-
+        .footer-bottom { border-top: 1px solid rgba(184, 160, 144, 0.15); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .footer-bottom p { font-size: 0.8rem; font-weight: 300; }
         .social-links { display: flex; gap: 1.5rem; }
-
-        .social-links a {
-            color: var(--rose-sauge);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.3s ease;
-        }
-
+        .social-links a { color: var(--rose-sauge); text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease; }
         .social-links a:hover { color: var(--blanc); }
 
         /* REVEAL */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
         /* RESPONSIVE */
         @media (max-width: 968px) {
@@ -731,6 +339,7 @@
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .nav-links { display: none; }
             .testimonials-grid { grid-template-columns: 1fr; }
+            .tarifs-grid { grid-template-columns: 1fr; }
             .stat-top-left, .stat-bottom-left { left: 1.5rem; }
             .stat-top-right, .stat-bottom-right { right: 1.5rem; }
             .hero-line-2 { margin-left: 5%; }
@@ -748,37 +357,27 @@
     </style>
 </head>
 <body>
-    <!-- ==================== HERO FULLSCREEN ==================== -->
+    <!-- HERO FULLSCREEN -->
     <section class="hero">
-        <!-- Vidéo noir et blanc en fond -->
         <video class="hero-video" autoplay loop muted playsInline>
             <source src="hero-bw.mp4" type="video/mp4">
         </video>
-
-        <!-- Overlay gradient -->
         <div class="hero-overlay"></div>
-
-        <!-- Navbar pill -->
         <nav class="nav">
             <div class="nav-pill">
                 <a href="#" class="nav-logo">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 2L2 22h20L12 2z" fill="none"/>
-                        <path d="M12 8l-5 10h10L12 8z" fill="currentColor" opacity="0.3"/>
-                    </svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 22h20L12 2z" fill="none"/><path d="M12 8l-5 10h10L12 8z" fill="currentColor" opacity="0.3"/></svg>
                     <span>Altitude</span>
                 </a>
                 <ul class="nav-links">
                     <li><a href="#about">À propos</a></li>
                     <li><a href="#disciplines">Disciplines</a></li>
-                    <li><a href="#video">Vidéo</a></li>
-                    <li><a href="#testimonials">Témoignages</a></li>
+                    <li><a href="#tarifs">Tarifs</a></li>
+                    <li><a href="#evenements">Événements</a></li>
                     <li><a href="#contact" class="nav-cta">Cours d'essai</a></li>
                 </ul>
             </div>
         </nav>
-
-        <!-- Contenu staggered -->
         <div class="hero-content">
             <h1 class="hero-title">
                 <span class="hero-line-1">L'art</span>
@@ -786,38 +385,13 @@
                 <span class="hero-line-3">à votre rythme</span>
             </h1>
         </div>
-
-        <!-- Stats corners -->
         <div class="hero-stats">
-            <div class="stat-top-left">
-                <div class="stat-number">8</div>
-                <div class="stat-divider"></div>
-                <div class="stat-label">disciplines</div>
-            </div>
-            <div class="stat-top-right">
-                <div class="stat-number">2022</div>
-                <div class="stat-divider"></div>
-                <div class="stat-label">création</div>
-            </div>
-            <div class="stat-bottom-left">
-                <div class="stat-number">100%</div>
-                <div class="stat-divider"></div>
-                <div class="stat-label">bienveillance</div>
-            </div>
-            <div class="stat-bottom-right">
-                <div class="stat-number">∞</div>
-                <div class="stat-divider"></div>
-                <div class="stat-label">passion</div>
-            </div>
+            <div class="stat-top-left"><div class="stat-number">8</div><div class="stat-divider"></div><div class="stat-label">disciplines</div></div>
+            <div class="stat-top-right"><div class="stat-number">2022</div><div class="stat-divider"></div><div class="stat-label">création</div></div>
+            <div class="stat-bottom-left"><div class="stat-number">100%</div><div class="stat-divider"></div><div class="stat-label">bienveillance</div></div>
+            <div class="stat-bottom-right"><div class="stat-number">∞</div><div class="stat-divider"></div><div class="stat-label">passion</div></div>
         </div>
-
-        <!-- Scroll indicator -->
-        <div class="hero-scroll">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
-        </div>
-
-        <!-- Bottom gradient -->
+        <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
         <div class="hero-bottom-gradient"></div>
     </section>
 
@@ -831,71 +405,130 @@
                 <p>Notre studio accueille chaque jour des personnes de tous horizons — débutantes comme confirmées — désireuses de découvrir leur potentiel dans un environnement bienveillant et sans jugement.</p>
                 <p>Nous croyons que chacun mérite de trouver une activité dans laquelle il se sent libre d'évoluer, d'apprendre et de s'épanouir. C'est pourquoi nos cours sont conçus pour permettre à chaque élève de progresser à son rythme, dans le respect de son corps et de ses objectifs.</p>
             </div>
-            <div class="about-image reveal">
-                <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&q=80" alt="Studio Altitude Belgium" loading="lazy">
-            </div>
+            <div class="about-image reveal"><img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&q=80" alt="Studio Altitude Belgium" loading="lazy"></div>
         </div>
     </section>
 
     <!-- DISCIPLINES -->
     <section class="disciplines" id="disciplines">
-        <div class="disciplines-header reveal">
-            <p class="section-eyebrow">Nos disciplines</p>
-            <h2 class="section-title">Une activité pour <em>chacun</em></h2>
-        </div>
+        <div class="disciplines-header reveal"><p class="section-eyebrow">Nos disciplines</p><h2 class="section-title">Une activité pour <em>chacun</em></h2></div>
         <div class="disciplines-grid">
-            <div class="discipline-card reveal">
-                <div class="discipline-card-image">
-                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80" alt="Pole Dance" loading="lazy">
-                </div>
-                <div class="discipline-card-content">
-                    <h3>Pole Dance</h3>
-                    <p>Force, grâce et fluidité. La pole dance allie puissance et élégance pour une pratique complète.</p>
-                </div>
-            </div>
-            <div class="discipline-card reveal">
-                <div class="discipline-card-image">
-                    <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600&q=80" alt="Cerceau aérien" loading="lazy">
-                </div>
-                <div class="discipline-card-content">
-                    <h3>Cerceau aérien</h3>
-                    <p>Suspendu dans les airs, le cerceau invite à la contemplation et au lâcher-prise.</p>
-                </div>
-            </div>
-            <div class="discipline-card reveal">
-                <div class="discipline-card-image">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&q=80" alt="Tissu aérien" loading="lazy">
-                </div>
-                <div class="discipline-card-content">
-                    <h3>Tissu aérien</h3>
-                    <p>Danse verticale et figures aériennes. Le tissu offre une liberté de mouvement infinie.</p>
+            <div class="discipline-card reveal"><div class="discipline-card-image"><img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80" loading="lazy"></div><div class="discipline-card-content"><h3>Pole Dance</h3><p>Force, grâce et fluidité. La pole dance allie puissance et élégance pour une pratique complète.</p></div></div>
+            <div class="discipline-card reveal"><div class="discipline-card-image"><img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600&q=80" loading="lazy"></div><div class="discipline-card-content"><h3>Cerceau aérien</h3><p>Suspendu dans les airs, le cerceau invite à la contemplation et au lâcher-prise.</p></div></div>
+            <div class="discipline-card reveal"><div class="discipline-card-image"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&q=80" loading="lazy"></div><div class="discipline-card-content"><h3>Tissu aérien</h3><p>Danse verticale et figures aériennes. Le tissu offre une liberté de mouvement infinie.</p></div></div>
+            <div class="discipline-card reveal"><div class="discipline-card-image"><img src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=600&q=80" loading="lazy"></div><div class="discipline-card-content"><h3>Yoga aérien</h3><p>Le hamac comme support pour explorer les postures en apesanteur. Détente et souplesse.</p></div></div>
+            <div class="discipline-card reveal"><div class="discipline-card-image"><img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80" loading="lazy"></div><div class="discipline-card-content"><h3>Bungee Fitness</h3><p>Cardio débridé avec harnais élastique. On vole, on rit, on transpire.</p></div></div>
+            <div class="discipline-card reveal"><div class="discipline-card-image"><img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=600&q=80" loading="lazy"></div><div class="discipline-card-content"><h3>Pilates & Stretching</h3><p>Renforcement en profondeur et étirements. Un corps souple et tonique.</p></div></div>
+        </div>
+    </section>
+
+    <!-- TARIFS -->
+    <section class="tarifs" id="tarifs">
+        <div class="tarifs-header reveal"><p class="section-eyebrow">Nos tarifs</p><h2 class="section-title">Transparent et <em>accessible</em></h2></div>
+        <div class="tarifs-grid">
+            <div class="tarif-card reveal">
+                <div class="tarif-card-header unite"><h3>À l'unité</h3></div>
+                <div class="tarif-card-body">
+                    <div class="tarif-price">15€ <span>/ cours</span></div>
+                    <div class="tarif-detail">Valable pour tous les cours collectifs</div>
+                    <div class="tarif-detail">Payable à l'avance</div>
                 </div>
             </div>
-            <div class="discipline-card reveal">
-                <div class="discipline-card-image">
-                    <img src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=600&q=80" alt="Yoga aérien" loading="lazy">
-                </div>
-                <div class="discipline-card-content">
-                    <h3>Yoga aérien</h3>
-                    <p>Le hamac comme support pour explorer les postures en apesanteur. Détente et souplesse.</p>
-                </div>
-            </div>
-            <div class="discipline-card reveal">
-                <div class="discipline-card-image">
-                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80" alt="Bungee Fitness" loading="lazy">
-                </div>
-                <div class="discipline-card-content">
-                    <h3>Bungee Fitness</h3>
-                    <p>Cardio débridé avec harnais élastique. On vole, on rit, on transpire.</p>
+            <div class="tarif-card reveal">
+                <div class="tarif-card-header cartes"><h3>Cartes</h3></div>
+                <div class="tarif-card-body">
+                    <div class="tarif-price">70€ <span>/ 5 cours</span></div>
+                    <div class="tarif-price" style="font-size: 1.8rem;">130€ <span>/ 10 cours</span></div>
+                    <div class="tarif-price" style="font-size: 1.8rem;">240€ <span>/ 20 cours</span></div>
+                    <div class="tarif-detail">Validité : 2 mois (5-10 cours) / 4 mois (20 cours)</div>
+                    <div class="tarif-juniors">
+                        <h4>Juniors (6-12 ans)</h4>
+                        <div class="tarif-price">50€ <span>/ 5 cours</span></div>
+                        <div class="tarif-price">75€ <span>/ 10 cours</span></div>
+                    </div>
                 </div>
             </div>
-            <div class="discipline-card reveal">
-                <div class="discipline-card-image">
-                    <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=600&q=80" alt="Pilates" loading="lazy">
+            <div class="tarif-card reveal">
+                <div class="tarif-card-header abonnements"><h3>Abonnements</h3></div>
+                <div class="tarif-card-body">
+                    <div class="tarif-price">75€ <span>/mois</span></div>
+                    <div class="tarif-detail">Engagement 1 an — cours illimités</div>
+                    <div class="tarif-price" style="font-size: 1.8rem;">100€ <span>/mois</span></div>
+                    <div class="tarif-detail">Engagement 6 mois — cours illimités</div>
+                    <div class="tarif-detail">Payable par domiciliation</div>
+                    <div class="tarif-juniors">
+                        <h4>Juniors (6-12 ans)</h4>
+                        <div class="tarif-price">50€ <span>/mois (1 an)</span></div>
+                        <div class="tarif-price">75€ <span>/mois (6 mois)</span></div>
+                    </div>
                 </div>
-                <div class="discipline-card-content">
-                    <h3>Pilates & Stretching</h3>
-                    <p>Renforcement en profondeur et étirements. Un corps souple et tonique.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONDITIONS -->
+    <section class="conditions" id="conditions">
+        <div class="conditions-content reveal">
+            <p class="section-eyebrow">Conditions de vente</p>
+            <h2 class="section-title">Nos <em>conditions</em></h2>
+            <div class="conditions-block">
+                <h3>Toutes nos cartes sont :</h3>
+                <ul>
+                    <li>Nominatives</li>
+                    <li>Non remboursables (même sous certificat médical — en cas de grossesse, cours adaptés disponibles)</li>
+                    <li>Valables dans le temps (2 mois ou 4 mois selon la carte)</li>
+                    <li>Valables pour l'ensemble des disciplines du studio</li>
+                </ul>
+                <div class="note">Les cartes donnent accès GRATUITEMENT aux sessions libres du dimanche.</div>
+                <div class="conditions-warning">⚠ Annulation &lt; 24h à l'avance = cours décompté de la carte.</div>
+            </div>
+            <div class="conditions-block">
+                <h3>Tous nos abonnements sont :</h3>
+                <ul>
+                    <li>Nominatifs</li>
+                    <li>Non remboursables (même sous certificat médical — en cas de grossesse, cours adaptés disponibles)</li>
+                    <li>Valables 6 mois ou 1 an</li>
+                    <li>Payables par domiciliation (prélèvement automatique)</li>
+                    <li>Valables pour l'ensemble des disciplines du studio</li>
+                </ul>
+                <div class="note">Les abonnements donnent accès GRATUITEMENT aux sessions libres du dimanche.</div>
+                <div class="conditions-warning">⚠ Annulations répétées (2x/semaine) &lt; 24h = accès bloqué une semaine.</div>
+            </div>
+            <div class="conditions-footer">Le studio se réserve le droit de modifier/adapter les horaires.<br>Compte bancaire : BE90 7320 8260 3332</div>
+        </div>
+    </section>
+
+    <!-- PRESTATIONS -->
+    <section class="prestations" id="prestations">
+        <div class="prestations-content reveal">
+            <p class="section-eyebrow">Prestations événements</p>
+            <h2 class="section-title">Donnez de la <em>légèreté</em> à vos événements</h2>
+            <p>Altitude Belgium est spécialisée dans les performances aériennes. Nous proposons des prestations uniques pour vos événements, avec tout le matériel nécessaire en intérieur comme en extérieur.</p>
+            <p>Nos artistes sont expérimentés, assurés, et habitués aux prestations événementielles (compétitions, festivals, soirées privées). Factures professionnelles fournies.</p>
+            <div class="prestations-list">
+                <span>Pole dance</span><span>Flying pole</span><span>Cerceau aérien</span><span>Tissu aérien</span><span>Cube aérien</span><span>Sangles aériennes</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENEMENTS -->
+    <section class="evenements" id="evenements">
+        <div class="tarifs-header reveal"><p class="section-eyebrow">Nos événements</p><h2 class="section-title">Du <em>spectacle</em> pour de belles causes</h2></div>
+        <div class="evenements-grid">
+            <div class="evenement-card reveal">
+                <div class="evenement-image"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&q=80" loading="lazy"></div>
+                <div class="evenement-content">
+                    <h3>TRAVEL (Édition 2)</h3>
+                    <div class="date">À venir</div>
+                    <p>En soutien au Relais pour la Vie de Verviers. Découvrez le monde à travers des performances de cerceau, tissu, pole dance, accroyoga, cube aérien, hammock et ancre aérienne.</p>
+                </div>
+            </div>
+            <div class="evenement-card reveal">
+                <div class="evenement-image"><img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80" loading="lazy"></div>
+                <div class="evenement-content">
+                    <h3>LEGENDS (Édition 1)</h3>
+                    <div class="date">15 novembre 2025</div>
+                    <p>Premier spectacle d'Altitude Belgium en soutien aux personnes souffrant d'Ataxie. 300 spectateurs ont découvert l'univers des contes et légendes grâce à nos artistes.</p>
                 </div>
             </div>
         </div>
@@ -903,59 +536,17 @@
 
     <!-- VIDEO -->
     <section class="video-section" id="video">
-        <div class="reveal">
-            <p class="section-eyebrow">Découvrez-nous</p>
-            <h2 class="section-title">L'énergie <em>Altitude</em></h2>
-        </div>
-        <div class="video-container reveal">
-            <div class="video-wrapper">
-                <iframe 
-                    src="https://www.youtube.com/embed/lq2tqJ5-roI?rel=0&modestbranding=1" 
-                    title="Altitude Belgium"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen loading="lazy">
-                </iframe>
-            </div>
-        </div>
+        <div class="reveal"><p class="section-eyebrow">Découvrez-nous</p><h2 class="section-title">L'énergie <em>Altitude</em></h2></div>
+        <div class="video-container reveal"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/lq2tqJ5-roI?rel=0&modestbranding=1" allowfullscreen loading="lazy"></iframe></div></div>
     </section>
 
     <!-- TESTIMONIALS -->
     <section class="testimonials" id="testimonials">
-        <div class="testimonials-header reveal">
-            <p class="section-eyebrow">Ils nous font confiance</p>
-            <h2 class="section-title">Ce qu'ils <em>en disent</em></h2>
-        </div>
+        <div class="testimonials-header reveal"><p class="section-eyebrow">Ils nous font confiance</p><h2 class="section-title">Ce qu'ils <em>en disent</em></h2></div>
         <div class="testimonials-grid">
-            <div class="testimonial-card reveal">
-                <p>Je suis arrivée sans aucune confiance en moi. Aujourd'hui, je me sens forte, libre, et entourée de femmes incroyables. Altitude a changé ma vie.</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">M</div>
-                    <div>
-                        <div class="testimonial-name">Marie</div>
-                        <div class="testimonial-role">Élève depuis 2023</div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card reveal">
-                <p>L'accueil est exceptionnel. On n'est pas jugé, on est accompagné. Les profs sont passionnés et chaque cours est un moment pour soi.</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">S</div>
-                    <div>
-                        <div class="testimonial-name">Sophie</div>
-                        <div class="testimonial-role">Élève depuis 2022</div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card reveal">
-                <p>Le bungee fitness m'a redonné le goût du sport. C'est fun, intense, et l'ambiance du studio donne envie de revenir chaque semaine.</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">L</div>
-                    <div>
-                        <div class="testimonial-name">Léa</div>
-                        <div class="testimonial-role">Élève depuis 2024</div>
-                    </div>
-                </div>
-            </div>
+            <div class="testimonial-card reveal"><p>Je suis arrivée sans aucune confiance en moi. Aujourd'hui, je me sens forte, libre, et entourée de femmes incroyables. Altitude a changé ma vie.</p><div class="testimonial-author"><div class="testimonial-avatar">M</div><div><div class="testimonial-name">Marie</div><div class="testimonial-role">Élève depuis 2023</div></div></div></div>
+            <div class="testimonial-card reveal"><p>L'accueil est exceptionnel. On n'est pas jugé, on est accompagné. Les profs sont passionnés et chaque cours est un moment pour soi.</p><div class="testimonial-author"><div class="testimonial-avatar">S</div><div><div class="testimonial-name">Sophie</div><div class="testimonial-role">Élève depuis 2022</div></div></div></div>
+            <div class="testimonial-card reveal"><p>Le bungee fitness m'a redonné le goût du sport. C'est fun, intense, et l'ambiance du studio donne envie de revenir chaque semaine.</p><div class="testimonial-author"><div class="testimonial-avatar">L</div><div><div class="testimonial-name">Léa</div><div class="testimonial-role">Élève depuis 2024</div></div></div></div>
         </div>
     </section>
 
@@ -965,69 +556,27 @@
             <p class="section-eyebrow">Prêt à essayer ?</p>
             <h2 class="section-title">Votre premier <em>cours d'essai</em> vous attend</h2>
             <p>Que vous cherchiez à développer votre condition physique, gagner en souplesse ou simplement relever un nouveau défi — vous avez votre place chez Altitude.</p>
-            <a href="https://www.altitudebelgium.com/" class="btn-primary">
-                Réserver maintenant
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+            <a href="https://www.altitudebelgium.com/" class="btn-primary">Réserver maintenant →</a>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
         <div class="footer-grid">
-            <div class="footer-brand">
-                <span class="logo">Altitude</span>
-                <p>Studio de disciplines aériennes à Verviers. Pole dance, cerceau, tissu, bungee fitness, pilates et plus.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Navigation</h4>
-                <ul>
-                    <li><a href="#about">À propos</a></li>
-                    <li><a href="#disciplines">Disciplines</a></li>
-                    <li><a href="#video">Vidéo</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Disciplines</h4>
-                <ul>
-                    <li><a href="#disciplines">Pole Dance</a></li>
-                    <li><a href="#disciplines">Cerceau</a></li>
-                    <li><a href="#disciplines">Tissu aérien</a></li>
-                    <li><a href="#disciplines">Bungee Fitness</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <ul>
-                    <li><a href="https://www.altitudebelgium.com/">altitudebelgium.com</a></li>
-                    <li><a href="https://www.instagram.com/altitudebelgium/">Instagram</a></li>
-                    <li><a href="https://www.facebook.com/altitudebelgium/">Facebook</a></li>
-                    <li><a href="https://www.youtube.com/@altitudebelgium9729">YouTube</a></li>
-                </ul>
-            </div>
+            <div class="footer-brand"><span class="logo">Altitude</span><p>Studio de disciplines aériennes à Verviers. Pole dance, cerceau, tissu, bungee fitness, pilates et plus.</p></div>
+            <div class="footer-col"><h4>Navigation</h4><ul><li><a href="#about">À propos</a></li><li><li><a href="#disciplines">Disciplines</a></li><li><a href="#tarifs">Tarifs</a></li><li><a href="#evenements">Événements</a></li></ul></div>
+            <div class="footer-col"><h4>Disciplines</h4><ul><li><a href="#disciplines">Pole Dance</a></li><li><a href="#disciplines">Cerceau</a></li><li><a href="#disciplines">Tissu aérien</a></li><li><a href="#disciplines">Bungee Fitness</a></li></ul></div>
+            <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:altitudebelgium@gmail.com">altitudebelgium@gmail.com</a></li><li><a href="https://www.instagram.com/altitudebelgium/">Instagram</a></li><li><a href="https://www.facebook.com/altitudebelgium/">Facebook</a></li></ul></div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2024 Altitude Belgium — Verviers, Belgique</p>
-            <div class="social-links">
-                <a href="https://www.instagram.com/altitudebelgium/">Instagram</a>
-                <a href="https://www.facebook.com/altitudebelgium/">Facebook</a>
-                <a href="https://www.youtube.com/@altitudebelgium9729">YouTube</a>
-            </div>
-        </div>
+        <div class="footer-bottom"><p>© 2024 Altitude Belgium — Verviers, Belgique</p><div class="social-links"><a href="https://www.instagram.com/altitudebelgium/">Instagram</a><a href="https://www.facebook.com/altitudebelgium/">Facebook</a></div></div>
     </footer>
 
     <script>
-        // REVEAL
         const reveals = document.querySelectorAll('.reveal');
         const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
         reveals.forEach(el => revealObserver.observe(el));
-
-        // SMOOTH SCROLL
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
